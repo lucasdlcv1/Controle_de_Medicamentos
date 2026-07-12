@@ -1,4 +1,5 @@
 using ControleDeMedicamentos.ConsoleApp.Compartilhado;
+using ControleDeMedicamentos.ConsoleApp.ModuloFuncionarios;
 using ControleDeMedicamentos.ConsoleApp.ModuloMedicamentos;
 
 namespace ControleDeMedicamentos.ConsoleApp.ModuloRequisicoes;
@@ -7,12 +8,16 @@ public class TelaRequisicaoEntrada : TelaBase<RequisicaoEntrada>, ITelaOpcoes, I
 {
     private readonly RepositorioMedicamentoEmArquivo repositorioMedicamento;
 
+    private readonly RepositorioFuncionarioEmArquivo repositorioFuncionario;
+
     public TelaRequisicaoEntrada(
         RepositorioRequisicaoEntradaEmArquivo repositorioRequisicao,
-        RepositorioMedicamentoEmArquivo repositorioMedicamento
+        RepositorioMedicamentoEmArquivo repositorioMedicamento,
+        RepositorioFuncionarioEmArquivo repositorioFuncionario
     ) : base("Requisição de Entrada", repositorioRequisicao)
     {
         this.repositorioMedicamento = repositorioMedicamento;
+        this.repositorioFuncionario = repositorioFuncionario;
     }
 
     public override void VisualizarTodos(bool deveExibirCabecalho)
@@ -26,8 +31,8 @@ public class TelaRequisicaoEntrada : TelaBase<RequisicaoEntrada>, ITelaOpcoes, I
         }
 
         Console.WriteLine(
-            "{0, -7} | {1, -20} | {2, -10} | {3, -15}",
-            "Id", "Medicamento", "Qtd", "Data"
+            "{0, -7} | {1, -20} | {2, -10} | {3, -15} | {4, -20}",
+            "Id", "Medicamento", "Qtd", "Data", "Funcionario"
         );
 
         List<RequisicaoEntrada> registros = repositorio.SelecionarTodos();
@@ -35,8 +40,8 @@ public class TelaRequisicaoEntrada : TelaBase<RequisicaoEntrada>, ITelaOpcoes, I
         foreach (RequisicaoEntrada r in registros)
         {
             Console.WriteLine(
-                "{0, -7} | {1, -20} | {2, -10} | {3, -15}",
-                r.Id, r.Medicamento.Nome, r.Quantidade, r.Data.ToShortDateString()
+                "{0, -7} | {1, -20} | {2, -10} | {3, -15} | {4, -20}",
+                r.Id, r.Medicamento.Nome, r.Quantidade, r.Data.ToShortDateString(), r.Funcionario.Nome
             );
         }
 
@@ -62,7 +67,32 @@ public class TelaRequisicaoEntrada : TelaBase<RequisicaoEntrada>, ITelaOpcoes, I
         Console.Write("Digite a quantidade que deseja requisitar: ");
         int quantidade = Convert.ToInt32(Console.ReadLine());
 
-        return new RequisicaoEntrada(medicamento, quantidade);
+        VisualizarFuncionarios();
+
+        Console.Write("Digite o ID do funcionário que está requisitando: ");
+        int idFuncionario = Convert.ToInt32(Console.ReadLine());
+
+        Funcionario funcionario = repositorioFuncionario.SelecionarPorId(idFuncionario)!;
+
+        return new RequisicaoEntrada(medicamento, quantidade, funcionario);
+    }
+
+    private void VisualizarFuncionarios()
+    {
+        Console.WriteLine(
+            "{0, -7} | {1, -20}",
+            "Id", "Nome"
+        );
+
+        List<Funcionario> registros = repositorioFuncionario.SelecionarTodos();
+
+        foreach (Funcionario f in registros)
+        {
+            Console.WriteLine(
+                "{0, -7} | {1, -20}",
+                f.Id, f.Nome
+            );
+        }
     }
 
     private void VisualizarMedicamentos()
