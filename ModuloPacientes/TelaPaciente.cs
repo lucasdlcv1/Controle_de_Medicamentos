@@ -1,4 +1,3 @@
-
 using ControleDeMedicamentos.ConsoleApp.Compartilhado;
 
 namespace ControleDeMedicamentos.ConsoleApp.ModuloPacientes;

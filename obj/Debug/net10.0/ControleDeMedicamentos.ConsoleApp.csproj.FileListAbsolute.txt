@@ -12,3 +12,4 @@ C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicament
 C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.ConsoleApp\obj\Debug\net10.0\ControleDeMedicamentos.ConsoleApp.pdb
 C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.ConsoleApp\obj\Debug\net10.0\ControleDeMedicamentos.ConsoleApp.genruntimeconfig.cache
 C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.ConsoleApp\obj\Debug\net10.0\ref\ControleDeMedicamentos.ConsoleApp.dll
+C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.ConsoleApp\obj\Debug\net10.0\ControleDeMedicamentos.ConsoleApp.sourcelink.json
