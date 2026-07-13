@@ -14,13 +14,15 @@ public class TelaPrincipal
 
     private readonly TelaPaciente telaPaciente;
     private readonly TelaFuncionario telaFuncionario;
-    private readonly TelaRequisicaoEntrada telaRequisicaoEntrada;
+
+    private readonly TelaEstoque telaEstoque;
 
     public TelaPrincipal(ContextoJson contexto)
     {
         RepositorioFornecedorEmArquivo repositorioFornecedor = new RepositorioFornecedorEmArquivo(contexto);
         RepositorioMedicamentoEmArquivo repositorioMedicamento = new RepositorioMedicamentoEmArquivo(contexto);
-        RepositorioRequisicaoEntradaEmArquivo repositorioRequisicao = new RepositorioRequisicaoEntradaEmArquivo(contexto);
+        RepositorioRequisicaoEntradaEmArquivo repositorioRequisicaoEntrada = new RepositorioRequisicaoEntradaEmArquivo(contexto);
+        RepositorioRequisicaoSaidaEmArquivo repositorioRequisicaoSaida = new RepositorioRequisicaoSaidaEmArquivo(contexto);
         RepositorioPacienteEmArquivo repositorioPaciente = new RepositorioPacienteEmArquivo(contexto);
         RepositorioFuncionarioEmArquivo repositorioFuncionario = new RepositorioFuncionarioEmArquivo(contexto);
 
@@ -28,8 +30,7 @@ public class TelaPrincipal
         telaMedicamento = new TelaMedicamento(repositorioMedicamento, repositorioFornecedor);
         telaPaciente = new TelaPaciente(repositorioPaciente);
         telaFuncionario = new TelaFuncionario(repositorioFuncionario);
-        telaRequisicaoEntrada = new TelaRequisicaoEntrada(repositorioRequisicao, repositorioMedicamento, repositorioFuncionario);
-
+        telaEstoque = new TelaEstoque(repositorioRequisicaoEntrada, repositorioRequisicaoSaida, repositorioMedicamento, repositorioFuncionario, repositorioPaciente);
     }
 
     public ITelaOpcoes? ObterOpcaoMenuPrincipal()
@@ -42,7 +43,7 @@ public class TelaPrincipal
         Console.WriteLine("2 - Gestão de Medicamentos");
         Console.WriteLine("3 - Gestão de Pacientes");
         Console.WriteLine("4 - Gestão de Funcionários");
-        Console.WriteLine("5 - Gestão de Requisições de Entrada");
+        Console.WriteLine("5 - Gestão de Estoque de Medicamentos");
         Console.WriteLine("S - Sair");
         Console.WriteLine("---------------------------------");
         Console.Write("> ");
@@ -62,7 +63,7 @@ public class TelaPrincipal
             return telaFuncionario;
 
         if (opcaoMenuPrincipal == "5")
-            return telaRequisicaoEntrada;
+            return telaEstoque;
 
         return null;
     }

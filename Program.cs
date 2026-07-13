@@ -1,6 +1,7 @@
 ﻿using System.Text.Json;
 using ControleDeMedicamentos.ConsoleApp.Compartilhado;
 using ControleDeMedicamentos.ConsoleApp.Compartilhado.Arquivos;
+using ControleDeMedicamentos.ConsoleApp.ModuloRequisicoes;
 
 ContextoJson contexto = new ContextoJson();
 
@@ -42,6 +43,19 @@ while (true)
 
         if (opcaoMenuInterno == "S")
             break;
+
+        if (telaSelecionada is TelaEstoque telaEstoque)
+        {
+            ITelaOpcoes? novaTela = telaEstoque.ObterTelaSelecionada(opcaoMenuInterno);
+
+            if (novaTela != null && novaTela != telaSelecionada)
+            {
+                telaSelecionada = novaTela;
+                continue;
+            }
+
+            continue;
+        }
 
         if (telaSelecionada is ITelaCrud telaBase)
         {
