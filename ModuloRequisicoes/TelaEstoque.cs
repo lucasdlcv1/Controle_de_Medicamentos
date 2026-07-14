@@ -66,20 +66,8 @@ public class TelaEstoque : ITelaOpcoes
         Console.WriteLine("Visualização de Estoque de Medicamentos");
         Console.WriteLine("---------------------------------");
 
-        Console.WriteLine(
-            "{0, -7} | {1, -20} | {2, -10}",
-            "Id", "Medicamento", "Qtd"
-        );
-
         List<Medicamento> registros = repositorioMedicamento.SelecionarTodos();
-
-        foreach (Medicamento m in registros)
-        {
-            Console.WriteLine(
-                "{0, -7} | {1, -20} | {2, -10}",
-                m.Id, m.Nome, m.QuantidadeEmEstoque
-            );
-        }
+        VisualizacaoMedicamentos.Exibir(registros);
 
         Console.WriteLine("---------------------------------");
         Console.Write("Digite ENTER para continuar...");

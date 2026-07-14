@@ -25,20 +25,8 @@ public class TelaMedicamento : TelaBase<Medicamento>, ITelaOpcoes, ITelaCrud
             Console.WriteLine("---------------------------------");
         }
 
-        Console.WriteLine(
-            "{0, -7} | {1, -20} | {2, -20} | {3, -20} | {4, -10}",
-            "Id", "Nome", "Fornecedor", "Descrição", "Estoque"
-        );
-
         List<Medicamento> registros = repositorio.SelecionarTodos();
-
-        foreach (Medicamento m in registros)
-        {
-            Console.WriteLine(
-                "{0, -7} | {1, -20} | {2, -20} | {3, -20} | {4, -10}",
-                m.Id, m.Nome, m.Fornecedor.Nome, m.Descricao, m.QuantidadeEmEstoque
-            );
-        }
+        VisualizacaoMedicamentos.Exibir(registros);
 
         if (deveExibirCabecalho)
         {

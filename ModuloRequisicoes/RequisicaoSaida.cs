@@ -5,14 +5,8 @@ using ControleDeMedicamentos.ConsoleApp.Compartilhado;
 
 namespace ControleDeMedicamentos.ConsoleApp.ModuloRequisicoes;
 
-public class RequisicaoSaida : EntidadeBase
+public class RequisicaoSaida : RequisicaoBase
 {
-    public Medicamento Medicamento { get; set; } = null!;
-    public int Quantidade { get; set; }
-    public DateTime Data { get; set; } = DateTime.Now;
-
-    public Funcionario Funcionario { get; set; } = null!;
-
     public Paciente Paciente { get; set; } = null!;
 
     public RequisicaoSaida() { }
@@ -31,14 +25,7 @@ public class RequisicaoSaida : EntidadeBase
     {
         List<string> erros = [];
 
-        if (Medicamento == null)
-            erros.Add("O campo \"Medicamento\" deve ser preenchido.");
-
-        if (Quantidade <= 0)
-            erros.Add("A \"Quantidade\" deve ser maior que zero.");
-
-        if (Funcionario == null)
-            erros.Add("O campo \"Funcionario\" deve ser preenchido.");
+        ValidarCamposComuns(erros);
 
         if (Paciente == null)
             erros.Add("O campo \"Paciente\" deve ser preenchido.");
@@ -53,9 +40,7 @@ public class RequisicaoSaida : EntidadeBase
     {
         RequisicaoSaida requisicaoAtualizada = (RequisicaoSaida)entidadeAtualizada;
 
-        Medicamento = requisicaoAtualizada.Medicamento;
-        Quantidade = requisicaoAtualizada.Quantidade;
-        Funcionario = requisicaoAtualizada.Funcionario;
+        AtualizarCamposComuns(requisicaoAtualizada);
         Paciente = requisicaoAtualizada.Paciente;
     }
 }

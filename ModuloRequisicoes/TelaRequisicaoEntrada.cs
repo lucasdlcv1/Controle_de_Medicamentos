@@ -4,20 +4,14 @@ using ControleDeMedicamentos.ConsoleApp.ModuloMedicamentos;
 
 namespace ControleDeMedicamentos.ConsoleApp.ModuloRequisicoes;
 
-public class TelaRequisicaoEntrada : TelaBase<RequisicaoEntrada>, ITelaOpcoes, ITelaCrud
+public class TelaRequisicaoEntrada : TelaRequisicaoBase<RequisicaoEntrada>, ITelaOpcoes, ITelaCrud
 {
-    private readonly RepositorioMedicamentoEmArquivo repositorioMedicamento;
-
-    private readonly RepositorioFuncionarioEmArquivo repositorioFuncionario;
-
     public TelaRequisicaoEntrada(
         RepositorioRequisicaoEntradaEmArquivo repositorioRequisicao,
         RepositorioMedicamentoEmArquivo repositorioMedicamento,
         RepositorioFuncionarioEmArquivo repositorioFuncionario
-    ) : base("Requisição de Entrada", repositorioRequisicao)
+    ) : base("Requisição de Entrada", repositorioRequisicao, repositorioMedicamento, repositorioFuncionario)
     {
-        this.repositorioMedicamento = repositorioMedicamento;
-        this.repositorioFuncionario = repositorioFuncionario;
     }
 
     public override void VisualizarTodos(bool deveExibirCabecalho)
@@ -55,62 +49,11 @@ public class TelaRequisicaoEntrada : TelaBase<RequisicaoEntrada>, ITelaOpcoes, I
 
     protected override RequisicaoEntrada ObterDadosCadastrais()
     {
-        VisualizarMedicamentos();
-
-        Console.WriteLine("---------------------------------");
-
-        Console.Write("Digite o ID do medicamento que deseja requisitar: ");
-        int idMedicamento = Convert.ToInt32(Console.ReadLine());
-
-        Medicamento medicamento = repositorioMedicamento.SelecionarPorId(idMedicamento)!;
-
-        Console.Write("Digite a quantidade que deseja requisitar: ");
-        int quantidade = Convert.ToInt32(Console.ReadLine());
-
-        VisualizarFuncionarios();
-
-        Console.Write("Digite o ID do funcionário que está requisitando: ");
-        int idFuncionario = Convert.ToInt32(Console.ReadLine());
-
-        Funcionario funcionario = repositorioFuncionario.SelecionarPorId(idFuncionario)!;
+        Medicamento medicamento = SelecionarMedicamento();
+        int quantidade = SelecionarQuantidade();
+        Funcionario funcionario = SelecionarFuncionario();
 
         return new RequisicaoEntrada(medicamento, quantidade, funcionario);
-    }
-
-    private void VisualizarFuncionarios()
-    {
-        Console.WriteLine(
-            "{0, -7} | {1, -20}",
-            "Id", "Nome"
-        );
-
-        List<Funcionario> registros = repositorioFuncionario.SelecionarTodos();
-
-        foreach (Funcionario f in registros)
-        {
-            Console.WriteLine(
-                "{0, -7} | {1, -20}",
-                f.Id, f.Nome
-            );
-        }
-    }
-
-    private void VisualizarMedicamentos()
-    {
-        Console.WriteLine(
-            "{0, -7} | {1, -20} | {2, -20} | {3, -20}",
-            "Id", "Nome", "Fornecedor", "Descrição"
-        );
-
-        List<Medicamento> registros = repositorioMedicamento.SelecionarTodos();
-
-        foreach (Medicamento m in registros)
-        {
-            Console.WriteLine(
-                "{0, -7} | {1, -20} | {2, -20} | {3, -20}",
-                m.Id, m.Nome, m.Fornecedor.Nome, m.Descricao
-            );
-        }
     }
 
     protected override bool ExistemDependenciasAtivasDoRegistro(int idRegistro)

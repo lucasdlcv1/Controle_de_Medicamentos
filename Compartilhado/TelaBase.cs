@@ -15,13 +15,14 @@ public abstract class TelaBase<TEntidade> where TEntidade : EntidadeBase
 
     public virtual string? ObterOpcaoMenu()
     {
+        Console.Clear();
         Console.WriteLine("---------------------------------");
-        Console.WriteLine($"Gestão de {nomeEntidade}s");
+        Console.WriteLine($"Gestão de {nomeEntidade}");
         Console.WriteLine("---------------------------------");
         Console.WriteLine($"1 - Cadastrar {nomeEntidade}");
         Console.WriteLine($"2 - Editar {nomeEntidade}");
         Console.WriteLine($"3 - Excluir {nomeEntidade}");
-        Console.WriteLine($"4 - Visualizar {nomeEntidade}s");
+        Console.WriteLine($"4 - Visualizar {nomeEntidade}");
         Console.WriteLine("S - Sair");
         Console.WriteLine("---------------------------------");
         Console.Write("> ");
@@ -33,6 +34,7 @@ public abstract class TelaBase<TEntidade> where TEntidade : EntidadeBase
 
     public void Cadastrar()
     {
+        Console.Clear();
         Console.WriteLine("---------------------------------");
         Console.WriteLine($"Cadastro de {nomeEntidade}");
         Console.WriteLine("---------------------------------");
@@ -79,6 +81,7 @@ public abstract class TelaBase<TEntidade> where TEntidade : EntidadeBase
 
     public void Editar()
     {
+        Console.Clear();
         Console.WriteLine("---------------------------------");
         Console.WriteLine($"Edição de {nomeEntidade}");
         Console.WriteLine("---------------------------------");
@@ -134,6 +137,7 @@ public abstract class TelaBase<TEntidade> where TEntidade : EntidadeBase
 
     public void Excluir()
     {
+        Console.Clear();
         Console.WriteLine("---------------------------------");
         Console.WriteLine($"Exclusão de {nomeEntidade}");
         Console.WriteLine("---------------------------------");

@@ -4,14 +4,8 @@ using ControleDeMedicamentos.ConsoleApp.ModuloMedicamentos;
 
 namespace ControleDeMedicamentos.ConsoleApp.ModuloRequisicoes;
 
-public class RequisicaoEntrada : EntidadeBase
+public class RequisicaoEntrada : RequisicaoBase
 {
-    public Medicamento Medicamento { get; set; } = null!;
-    public int Quantidade { get; set; }
-    public DateTime Data { get; set; } = DateTime.Now;
-
-    public Funcionario Funcionario { get; set; } = null!;
-
     public RequisicaoEntrada() { }
 
     public RequisicaoEntrada(Medicamento medicamento, int quantidade, Funcionario funcionario) : this()
@@ -27,14 +21,7 @@ public class RequisicaoEntrada : EntidadeBase
     {
         List<string> erros = [];
 
-        if (Medicamento == null)
-            erros.Add("O campo \"Medicamento\" deve ser preenchido.");
-
-        if (Quantidade <= 0)
-            erros.Add("A \"Quantidade\" deve ser maior que zero.");
-
-        if (Funcionario == null)
-            erros.Add("O campo \"Funcionario\" deve ser preenchido.");
+        ValidarCamposComuns(erros);
 
         return erros;
     }
@@ -43,8 +30,6 @@ public class RequisicaoEntrada : EntidadeBase
     {
         RequisicaoEntrada requisicaoAtualizada = (RequisicaoEntrada)entidadeAtualizada;
 
-        Medicamento = requisicaoAtualizada.Medicamento;
-        Quantidade = requisicaoAtualizada.Quantidade;
-        Funcionario = requisicaoAtualizada.Funcionario;
+        AtualizarCamposComuns(requisicaoAtualizada);
     }
 }
