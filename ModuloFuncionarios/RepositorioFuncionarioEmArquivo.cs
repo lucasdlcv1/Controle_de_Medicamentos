@@ -1,6 +1,6 @@
-using ControleDeMedicamentos.ConsoleApp.Compartilhado.Arquivos;
+using ControleDeMedicamentos.WebApp.Compartilhado.Arquivos;
 
-namespace ControleDeMedicamentos.ConsoleApp.ModuloFuncionarios;
+namespace ControleDeMedicamentos.WebApp.ModuloFuncionarios;
 
 public class RepositorioFuncionarioEmArquivo : RepositorioBaseEmArquivo<Funcionario>
 {

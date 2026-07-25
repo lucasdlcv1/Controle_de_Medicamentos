@@ -1,9 +1,9 @@
-using ControleDeMedicamentos.ConsoleApp.Compartilhado;
-using ControleDeMedicamentos.ConsoleApp.ModuloFuncionarios;
-using ControleDeMedicamentos.ConsoleApp.ModuloMedicamentos;
-using ControleDeMedicamentos.ConsoleApp.ModuloPacientes;
+using ControleDeMedicamentos.WebApp.Compartilhado;
+using ControleDeMedicamentos.WebApp.ModuloFuncionarios;
+using ControleDeMedicamentos.WebApp.ModuloMedicamentos;
+using ControleDeMedicamentos.WebApp.ModuloPacientes;
 
-namespace ControleDeMedicamentos.ConsoleApp.ModuloRequisicoes;
+namespace ControleDeMedicamentos.WebApp.ModuloRequisicoes;
 
 public class TelaRequisicaoSaida : TelaRequisicaoBase<RequisicaoSaida>, ITelaOpcoes, ITelaCrud
 {

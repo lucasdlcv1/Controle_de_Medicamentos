@@ -1,8 +1,8 @@
-using ControleDeMedicamentos.ConsoleApp.Compartilhado;
-using ControleDeMedicamentos.ConsoleApp.ModuloFornecedores;
-using ControleDeMedicamentos.ConsoleApp.ModuloRequisicoes;
+using ControleDeMedicamentos.WebApp.Compartilhado;
+using ControleDeMedicamentos.WebApp.ModuloFornecedores;
+using ControleDeMedicamentos.WebApp.ModuloRequisicoes;
 
-namespace ControleDeMedicamentos.ConsoleApp.ModuloMedicamentos;
+namespace ControleDeMedicamentos.WebApp.ModuloMedicamentos;
 
 public class Medicamento : EntidadeBase
 {

@@ -146,7 +146,7 @@ Este projeto foi desenvolvido para praticar conceitos de desenvolvimento de soft
 4. Para executar o projeto compilando em tempo real
 
    ```bash
-   dotnet run --project ControleDeMedicamentos.ConsoleApp
+   dotnet run --project ControleDeMedicamentos.WebApp
    ```
 
 ## Requisitos

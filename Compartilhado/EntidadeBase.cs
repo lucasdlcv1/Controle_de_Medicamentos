@@ -1,4 +1,4 @@
-namespace ControleDeMedicamentos.ConsoleApp.Compartilhado;
+namespace ControleDeMedicamentos.WebApp.Compartilhado;
 
 public abstract class EntidadeBase
 {

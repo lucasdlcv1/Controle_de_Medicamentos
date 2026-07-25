@@ -1,6 +1,6 @@
-using ControleDeMedicamentos.ConsoleApp.ModuloMedicamentos;
+using ControleDeMedicamentos.WebApp.ModuloMedicamentos;
 
-namespace ControleDeMedicamentos.ConsoleApp.Compartilhado;
+namespace ControleDeMedicamentos.WebApp.Compartilhado;
 
 public static class VisualizacaoMedicamentos
 {

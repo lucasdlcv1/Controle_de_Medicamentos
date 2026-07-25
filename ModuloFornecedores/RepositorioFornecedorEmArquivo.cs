@@ -1,7 +1,7 @@
-using ControleDeMedicamentos.ConsoleApp.Compartilhado;
-using ControleDeMedicamentos.ConsoleApp.Compartilhado.Arquivos;
+using ControleDeMedicamentos.WebApp.Compartilhado;
+using ControleDeMedicamentos.WebApp.Compartilhado.Arquivos;
 
-namespace ControleDeMedicamentos.ConsoleApp.ModuloFornecedores;
+namespace ControleDeMedicamentos.WebApp.ModuloFornecedores;
 
 public class RepositorioFornecedorEmArquivo : RepositorioBaseEmArquivo<Fornecedor>
 {

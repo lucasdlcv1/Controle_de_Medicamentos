@@ -1,4 +1,4 @@
-namespace ControleDeMedicamentos.ConsoleApp.Compartilhado.Arquivos;
+namespace ControleDeMedicamentos.WebApp.Compartilhado.Arquivos;
 
 public abstract class RepositorioBaseEmArquivo<TEntidade> where TEntidade : EntidadeBase
 {

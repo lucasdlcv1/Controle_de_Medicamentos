@@ -1,6 +1,6 @@
-using ControleDeMedicamentos.ConsoleApp.Compartilhado;
+using ControleDeMedicamentos.WebApp.Compartilhado;
 
-namespace ControleDeMedicamentos.ConsoleApp.ModuloFornecedores;
+namespace ControleDeMedicamentos.WebApp.ModuloFornecedores;
 
 public class TelaFornecedor : TelaBase<Fornecedor>, ITelaOpcoes, ITelaCrud
 {

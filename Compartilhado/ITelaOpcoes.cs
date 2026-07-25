@@ -1,4 +1,4 @@
-namespace ControleDeMedicamentos.ConsoleApp.Compartilhado;
+namespace ControleDeMedicamentos.WebApp.Compartilhado;
 
 public interface ITelaOpcoes // Interface = contrato
 {

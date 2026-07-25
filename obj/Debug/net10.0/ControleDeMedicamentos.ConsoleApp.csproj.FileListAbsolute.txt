@@ -13,3 +13,17 @@ C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicament
 C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.ConsoleApp\obj\Debug\net10.0\ControleDeMedicamentos.ConsoleApp.genruntimeconfig.cache
 C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.ConsoleApp\obj\Debug\net10.0\ref\ControleDeMedicamentos.ConsoleApp.dll
 C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.ConsoleApp\obj\Debug\net10.0\ControleDeMedicamentos.ConsoleApp.sourcelink.json
+C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.ConsoleApp\bin\Debug\net10.0\ControleDeMedicamentos.ConsoleApp.staticwebassets.endpoints.json
+C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.ConsoleApp\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.ConsoleApp\obj\Debug\net10.0\ControleDeMedicamentos.ConsoleApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.ConsoleApp\obj\Debug\net10.0\rjimswa.dswa.cache.json
+C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.ConsoleApp\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.ConsoleApp\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.ConsoleApp\obj\Debug\net10.0\scopedcss\bundle\ControleDeMedicamentos.ConsoleApp.styles.css
+C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.ConsoleApp\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.ConsoleApp\obj\Debug\net10.0\staticwebassets.build.json.cache
+C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.ConsoleApp\obj\Debug\net10.0\staticwebassets.development.json
+C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.ConsoleApp\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.ConsoleApp\obj\Debug\net10.0\swae.build.ex.cache
+C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.ConsoleApp\obj\Debug\net10.0\ControleDeMedicamentos.ConsoleApp.RazorAssemblyInfo.cache
+C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.ConsoleApp\obj\Debug\net10.0\ControleDeMedicamentos.ConsoleApp.RazorAssemblyInfo.cs

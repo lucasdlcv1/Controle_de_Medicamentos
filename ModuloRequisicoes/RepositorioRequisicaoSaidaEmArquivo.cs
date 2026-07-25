@@ -1,6 +1,6 @@
-using ControleDeMedicamentos.ConsoleApp.Compartilhado.Arquivos;
+using ControleDeMedicamentos.WebApp.Compartilhado.Arquivos;
 
-namespace ControleDeMedicamentos.ConsoleApp.ModuloRequisicoes;
+namespace ControleDeMedicamentos.WebApp.ModuloRequisicoes;
 
 public class RepositorioRequisicaoSaidaEmArquivo : RepositorioBaseEmArquivo<RequisicaoSaida>
 {

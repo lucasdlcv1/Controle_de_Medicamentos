@@ -1,6 +1,6 @@
-using ControleDeMedicamentos.ConsoleApp.Compartilhado.Arquivos;
+using ControleDeMedicamentos.WebApp.Compartilhado.Arquivos;
 
-namespace ControleDeMedicamentos.ConsoleApp.Compartilhado;
+namespace ControleDeMedicamentos.WebApp.Compartilhado;
 
 public abstract class TelaBase<TEntidade> where TEntidade : EntidadeBase
 {

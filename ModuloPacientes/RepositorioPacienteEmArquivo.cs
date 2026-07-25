@@ -1,6 +1,6 @@
-using ControleDeMedicamentos.ConsoleApp.Compartilhado.Arquivos;
+using ControleDeMedicamentos.WebApp.Compartilhado.Arquivos;
 
-namespace ControleDeMedicamentos.ConsoleApp.ModuloPacientes;
+namespace ControleDeMedicamentos.WebApp.ModuloPacientes;
 
 public class RepositorioPacienteEmArquivo : RepositorioBaseEmArquivo<Paciente>
 {

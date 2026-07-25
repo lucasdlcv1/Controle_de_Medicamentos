@@ -1,11 +1,11 @@
 using System;
-using ControleDeMedicamentos.ConsoleApp.Compartilhado;
-using ControleDeMedicamentos.ConsoleApp.Compartilhado.Arquivos;
-using ControleDeMedicamentos.ConsoleApp.ModuloFuncionarios;
-using ControleDeMedicamentos.ConsoleApp.ModuloMedicamentos;
-using ControleDeMedicamentos.ConsoleApp.ModuloPacientes;
+using ControleDeMedicamentos.WebApp.Compartilhado;
+using ControleDeMedicamentos.WebApp.Compartilhado.Arquivos;
+using ControleDeMedicamentos.WebApp.ModuloFuncionarios;
+using ControleDeMedicamentos.WebApp.ModuloMedicamentos;
+using ControleDeMedicamentos.WebApp.ModuloPacientes;
 
-namespace ControleDeMedicamentos.ConsoleApp.ModuloRequisicoes;
+namespace ControleDeMedicamentos.WebApp.ModuloRequisicoes;
 
 public class TelaEstoque : ITelaOpcoes
 {

@@ -1,6 +1,6 @@
-using ControleDeMedicamentos.ConsoleApp.Compartilhado;
+using ControleDeMedicamentos.WebApp.Compartilhado;
 
-namespace ControleDeMedicamentos.ConsoleApp.ModuloFuncionarios;
+namespace ControleDeMedicamentos.WebApp.ModuloFuncionarios;
 
 public class TelaFuncionario : TelaBase<Funcionario>, ITelaOpcoes, ITelaCrud
 {

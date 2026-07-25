@@ -1,9 +1,9 @@
-using ControleDeMedicamentos.ConsoleApp.Compartilhado;
-using ControleDeMedicamentos.ConsoleApp.Compartilhado.Arquivos;
-using ControleDeMedicamentos.ConsoleApp.ModuloFuncionarios;
-using ControleDeMedicamentos.ConsoleApp.ModuloMedicamentos;
+using ControleDeMedicamentos.WebApp.Compartilhado;
+using ControleDeMedicamentos.WebApp.Compartilhado.Arquivos;
+using ControleDeMedicamentos.WebApp.ModuloFuncionarios;
+using ControleDeMedicamentos.WebApp.ModuloMedicamentos;
 
-namespace ControleDeMedicamentos.ConsoleApp.ModuloRequisicoes;
+namespace ControleDeMedicamentos.WebApp.ModuloRequisicoes;
 
 public abstract class TelaRequisicaoBase<TRequisicao> : TelaBase<TRequisicao> where TRequisicao : RequisicaoBase
 {

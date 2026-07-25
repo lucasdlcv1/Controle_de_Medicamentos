@@ -1,7 +1,7 @@
-using ControleDeMedicamentos.ConsoleApp.Compartilhado;
-using ControleDeMedicamentos.ConsoleApp.ModuloFornecedores;
+using ControleDeMedicamentos.WebApp.Compartilhado;
+using ControleDeMedicamentos.WebApp.ModuloFornecedores;
 
-namespace ControleDeMedicamentos.ConsoleApp.ModuloMedicamentos;
+namespace ControleDeMedicamentos.WebApp.ModuloMedicamentos;
 
 public class TelaMedicamento : TelaBase<Medicamento>, ITelaOpcoes, ITelaCrud
 {
