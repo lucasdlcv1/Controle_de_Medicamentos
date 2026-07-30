@@ -1,22 +1,25 @@
 @using ControleDeMedicamentos.WebApp.ModuloFornecedores
+@using ControleDeMedicamentos.WebApp.ModuloMedicamentos
 
-@model Fornecedor;
+@model Medicamento;
 
-<h2>Exclusão de Fornecedor</h2>
+<h2>Exclusao de Medicamento</h2>
 
 <hr />
 <a href="/">Início</a>
 <a href="/Fornecedor/Listar">Fornecedores</a>
 <a href="/Medicamento/Listar">Medicamentos</a>
+
 <hr />
 
-<form action="/Fornecedor/ConfirmarExclusao/@Model.Id" method="post">
+<form action="/Medicamento/Excluir/@Model.Id" method="post">
+
     <p>Tem certeza que deseja excluir o fornecedor <strong>@Model.Nome</strong>?</p>
 
 
-    <button type="submit">Confirmar Exclusão</button>
+    <button type="submit">Confirmar</button>
 </form>
 
 <p>
-    <a href="/Fornecedor/Listar">Voltar para a lista de fornecedores</a>
+    <a href="/Medicamento/Listar">Voltar para a lista de medicamentos</a>
 </p>

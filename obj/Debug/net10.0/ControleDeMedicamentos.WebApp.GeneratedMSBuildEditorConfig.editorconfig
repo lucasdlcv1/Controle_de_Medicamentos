@@ -41,3 +41,19 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/Lucas/Desktop/Lucas/Academia do Programador 2026/controle-de-medicamentos-2026-1/ControleDeMedicamentos.WebApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lucas/Desktop/Lucas/Academia do Programador 2026/controle-de-medicamentos-2026-1/ControleDeMedicamentos.WebApp/Views/Medicamento/Cadastrar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbWVudG9cQ2FkYXN0cmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lucas/Desktop/Lucas/Academia do Programador 2026/controle-de-medicamentos-2026-1/ControleDeMedicamentos.WebApp/Views/Medicamento/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbWVudG9cRWRpdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lucas/Desktop/Lucas/Academia do Programador 2026/controle-de-medicamentos-2026-1/ControleDeMedicamentos.WebApp/Views/Medicamento/Excluir.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbWVudG9cRXhjbHVpci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lucas/Desktop/Lucas/Academia do Programador 2026/controle-de-medicamentos-2026-1/ControleDeMedicamentos.WebApp/Views/Medicamento/Listar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbWVudG9cTGlzdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 

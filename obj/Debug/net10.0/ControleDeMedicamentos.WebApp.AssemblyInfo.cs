@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ControleDeMedicamentos.WebApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3db4ca64b096a333be66a04e3b6faf322dc08f1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+536753d487981dcd668a268289474032c8413f2d")]
 [assembly: System.Reflection.AssemblyProductAttribute("ControleDeMedicamentos.WebApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ControleDeMedicamentos.WebApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
