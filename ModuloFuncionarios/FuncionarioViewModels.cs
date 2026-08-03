@@ -1,0 +1,20 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace ControleDeMedicamentos.WebApp.ModuloFuncionarios;
+
+public record ListarFuncionarioViewModel(int Id, string Nome, string Telefone);
+
+public record CadastrarFuncionarioViewModel(string Nome,
+ string Telefone,
+
+ [Display(Name = "CPF")] //Atributo
+ string Cpf);
+
+public record EditarFuncionarioViewModel(int Id, string Nome,
+ string Telefone,
+
+ [Display(Name = "CPF")] //Atributo
+ string Cpf);
+
+public record ExcluirFuncionarioViewModel(int Id, string Nome);

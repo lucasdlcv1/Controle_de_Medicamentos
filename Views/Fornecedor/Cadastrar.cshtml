@@ -1,14 +1,10 @@
-@using ControleDeMedicamentos.WebApp.ModuloFornecedores
-
 @model List<Fornecedor>
 
-<h2>Cadastro de Fornecedor</h2>
+@{
+    Layout = "_Layout";
 
-<hr />
-<a href="/">Início</a>
-<a href="/Fornecedor/Listar">Fornecedores</a>
-<a href="/Medicamento/Listar">Medicamentos</a>
-<hr />
+    ViewBag.Title = "Cadastrar Fornecedor";
+}
 
 <form action="/Fornecedor/Cadastrar" method="post">
     <div>

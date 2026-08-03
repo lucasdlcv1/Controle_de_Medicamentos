@@ -1,0 +1,36 @@
+@model CadastrarFuncionarioViewModel
+
+
+@{
+    Layout = "_Layout";
+
+    ViewBag.Title = "Cadastrar Funcionario";
+}
+
+<form asp-action="Cadastrar" method="post">
+    <div>
+        <label asp-for="Nome"></label>
+        <br />
+        <input asp-for="Nome" />
+    </div>
+
+    <div>
+        <label asp-for="Telefone"></label>
+        <br />
+        <input asp-for="Telefone" />
+    </div>
+
+    <div>
+        <label asp-for="Cpf">CPF</label>
+        <br />
+        <input asp-for="Cpf" />
+    </div>
+
+
+
+    <button type="submit">Cadastrar</button>
+</form>
+
+<p>
+    <a asp-action="Listar">Voltar para a lista de funcionarios</a>
+</p>

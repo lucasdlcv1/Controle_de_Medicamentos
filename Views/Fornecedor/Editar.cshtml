@@ -1,14 +1,10 @@
-@using ControleDeMedicamentos.WebApp.ModuloFornecedores
-
 @model Fornecedor;
 
-<h2>Edição de Fornecedor</h2>
+@{
+    Layout = "_Layout";
 
-<hr />
-<a href="/">Início</a>
-<a href="/Fornecedor/Listar">Fornecedores</a>
-<a href="/Medicamento/Listar">Medicamentos</a>
-<hr />
+    ViewBag.Title = "Editar Fornecedor";
+}
 
 <form action="/Fornecedor/Editar/@Model.Id" method="post">
     <div>

@@ -1,12 +1,8 @@
-@using ControleDeMedicamentos.WebApp.ModuloFornecedores
+@{
+    Layout = "_Layout";
 
-<h2>Cadastro de Medicamento</h2>
-
-<hr />
-<a href="/">Início</a>
-<a href="/Fornecedor/Listar">Fornecedores</a>
-<a href="/Medicamento/Listar">Medicamentos</a>
-<hr />
+    ViewBag.Title = "Cadastro de Medicamento";
+}
 
 <form action="/Medicamento/Cadastrar" method="post">
     <div>
@@ -28,7 +24,7 @@
 
             @foreach (Fornecedor f in ViewBag.Fornecedores)
             {
-                <option value= "@f.Id"> @f.Nome</option>
+                <option value="@f.Id"> @f.Nome</option>
 
             }
         </select>
@@ -42,5 +38,5 @@
 </form>
 
 <p>
-<a href="/Medicamento/Listar">Voltar para a lista de fornecedores</a>
-</ p >
+    <a href="/Medicamento/Listar">Voltar para a lista de fornecedores</a>
+</ p>
