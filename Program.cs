@@ -10,6 +10,7 @@ WebApplication app = builder.Build();
 // Middleware
 app.UseRouting();
 app.MapDefaultControllerRoute();
+app.UseStaticFiles();
 
 app.Run();
 

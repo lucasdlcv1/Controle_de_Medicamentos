@@ -27,3 +27,5 @@ C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicament
 C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.WebApp\obj\Debug\net10.0\ControleDeMedicamentos.WebApp.pdb
 C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.WebApp\obj\Debug\net10.0\ControleDeMedicamentos.WebApp.genruntimeconfig.cache
 C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.WebApp\obj\Debug\net10.0\ref\ControleDeMedicamentos.WebApp.dll
+C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.WebApp\bin\Debug\net10.0\ControleDeMedicamentos.WebApp.staticwebassets.runtime.json
+C:\Users\Lucas\Desktop\Lucas\Academia do Programador 2026\controle-de-medicamentos-2026-1\ControleDeMedicamentos.WebApp\obj\Debug\net10.0\compressed\is78x3dx66-{0}-png3v1tikw-png3v1tikw.gz
