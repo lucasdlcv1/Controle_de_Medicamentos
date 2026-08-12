@@ -6,27 +6,28 @@
     ViewBag.Title = "Editar Fornecedor";
 }
 
-<form action="/Fornecedor/Editar/@Model.Id" method="post">
-    <div>
-        <label for="Nome">Nome</label>
-        <input type="text" id="Nome" name="Nome" value="@Model.Nome" />
-    </div>
+<div class="row justify-content-start">
+    <form class="col-lg-6" action="/Fornecedor/Editar/@Model.Id" method="post">
+        <div>
+            <label class="form-label" for="Nome">Nome</label>
+            <input type="text" class="form-control" id="Nome" name="Nome" value="@Model.Nome" />
+        </div>
 
-    <div>
-        <label for="Telefone">Telefone</label>
-        <input type="text" id="Telefone" name="Telefone" value="@Model.Telefone" />
-    </div>
+        <div class="mt-4">
+            <label class="form-label" for="Telefone">Telefone</label>
+            <input type="text" class="form-control" id="Telefone" name="Telefone" value="@Model.Telefone" />
+        </div>
 
-    <div>
-        <label for="Cnpj">CNPJ</label>
-        <input type="text" id="Cnpj" name="Cnpj" value="@Model.Cnpj" />
-    </div>
+        <div class="mt-4">
+            <label class="form-label" for="Cnpj">CNPJ</label>
+            <input type="text" class="form-control" id="Cnpj" name="Cnpj" value="@Model.Cnpj" />
+        </div>
 
 
+        <div class="d-flex gap-2 mt-4">
+            <button class="btn btn-primary" type="submit">Confirmar Edição</button>
+            <a class="btn btn-secondary" href="/Fornecedor/Listar">Voltar para a lista de fornecedores</a>
+        </div>
 
-    <button type="submit">Confirmar Edição</button>
-</form>
-
-<p>
-    <a href="/Fornecedor/Listar">Voltar para a lista de fornecedores</a>
-</p>
+    </form>
+</div>

@@ -6,13 +6,16 @@
     ViewBag.Title = "Excluir Fornecedor";
 }
 
+
+<div class="row"></div>
 <form action="/Fornecedor/ConfirmarExclusao/@Model.Id" method="post">
-    <p>Tem certeza que deseja excluir o fornecedor <strong>@Model.Nome</strong>?</p>
+    <p>
+        Tem certeza que deseja excluir o fornecedor <strong>@Model.Nome</strong>?
+    </p>
 
-
-    <button type="submit">Confirmar Exclusão</button>
+    <div class="d-flex gap-2 mt-4">
+        <button class="btn btn-danger" type="submit">Confirmar Exclusão</button>
+        <a class="btn btn-secondary" href="/Fornecedor/Listar">Voltar para a lista de fornecedores</a>
+    </div>
 </form>
-
-<p>
-    <a href="/Fornecedor/Listar">Voltar para a lista de fornecedores</a>
-</p>
+</div>

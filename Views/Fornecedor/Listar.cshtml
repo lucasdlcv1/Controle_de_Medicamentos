@@ -7,34 +7,57 @@
 }
 
 <p>
-    <a class="btn btn-primary" href="/Fornecedor/Cadastrar">Cadastrar Fornecedor</a>
+    <a class="btn btn-primary" href="/Fornecedor/Cadastrar">
+        <i class="bi bi-plus-circle"></i>
+        Cadastrar Fornecedor
+    </a>
 </p>
 
-<table>
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Nome</th>
-            <th>CNPJ</th>
-            <th>Telefone</th>
-            <th>Ações</th>
-        </tr>
-    </thead>
+@if (Model.Count == 0)
+{
+    <div class="alert alert-info mt-4" role="alert">
+        Nenhum fornecedor cadastrado.
+    </div>
+}
 
-    <tbody>
+else
+{
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+
         @foreach (var fornecedor in Model)
         {
-            <tr>
-                <td>@fornecedor.Id</td>
-                <td>@fornecedor.Nome</td>
-                <td>@fornecedor.Cnpj</td>
-                <td>@fornecedor.Telefone</td>
-                <td>
-                    <a href="/Fornecedor/Editar/@fornecedor.Id">Editar</a>
-                    <span> | </span>
-                    <a href="/Fornecedor/Excluir/@fornecedor.Id">Excluir</a>
-                </td>
-            </tr>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5>@fornecedor.Nome</h5>
+                            <span class="badge text-bg-secondary">@fornecedor.Id</span>
+                        </div>
+
+                        <dl class="row mb-2">
+                            <dt class="col-sm-3">CNPJ</dt>
+                            <dd class="col-sm-9">@fornecedor.Cnpj</dd>
+
+                            <dt class="col-sm-3">Telefone</dt>
+                            <dd class="col-sm-9">@fornecedor.Telefone</dd>
+                        </dl>
+
+                        <div class="d-flex gap-2 justify-content-end mt-auto">
+                            <a class="btn btn-sm btn-outline-primary" href="/Fornecedor/Editar/@fornecedor.Id">
+                                <i class="bi bi-pencil"></i>
+                                Editar
+                            </a>
+                            <span> | </span>
+                            <a class="btn btn-sm btn-outline-danger" href="/Fornecedor/Excluir/@fornecedor.Id">
+                                <i class="bi bi-trash"></i>
+                                Excluir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         }
-    </tbody>
-</table>
+    </div>
+}
