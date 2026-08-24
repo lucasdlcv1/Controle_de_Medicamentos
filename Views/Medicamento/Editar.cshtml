@@ -1,5 +1,3 @@
-@model Medicamento;
-
 @{
     Layout = "_Layout";
 
@@ -8,46 +6,47 @@
 
 <hr />
 
-<form action="/Medicamento/Editar/@Model.Id" method="post">
-    <div>
-        <label for="Nome">Nome</label>
-        <br />
-        <input type="text" id="Nome" name="Nome" value="@Model.Nome" />
-    </div>
+@model EditarMedicamentoViewModel;
 
-    <div>
-        <label for="Descricao">Descricao</label>
-        <br />
-        <textarea id="descricao" name="descricao">@Model.Descricao</textarea>
-    </div>
+<div class="row justify-content-start">
+    <form class="col-lg-6" asp-action="Editar" asp-route-id="@Model.Id" method="post">
 
-    <div>
-        <label for="fornecedorID">Fornecedor</label>
-        <br />
-        <select id="fornecedorId" name="fornecedorID">
-            @foreach (Fornecedor f in ViewBag.Fornecedores)
-            {
-                if (f.Id == Model.Fornecedor.Id)
+        <div>
+            <label class="form-label" asp-for="Nome">Nome</label>
+            <input class="form-control" type="text" asp-for="Nome" name="Nome" />
+        </div>
+
+        <div class="mt-4">
+            <label class="form-label" asp-for="Descricao">Descricao</label>
+            <textarea class="form-control" asp-for="Descricao"></textarea>
+        </div>
+
+        <div class="mt-4">
+            <label class="form-label" asp-for="FornecedorId">Fornecedor</label>
+            <select class="form-select" asp-for="FornecedorId">
+
+                @foreach (FornecedorMedicamentoViewModel f in Model.Fornecedores)
                 {
-                    <option value="@f.Id" selected>@f.Nome</option>
+                    <option value="@f.Id"> @f.Nome</option>
+
                 }
-                else
-                {
-                    <option value="@f.Id">@f.Nome</option>
-                }
-
-            }
+            </select>
 
 
-        </select>
-
-    </div>
+        </div>
 
 
 
-    <button type="submit">Confirmar Edição</button>
-</form>
+        <div class="d-flex gap-2 mt-4">
+            <button class="btn btn-primary" type="submit">
+                <i class="bi bi-check-circle"></i>
+                Confirmar Edição
+            </button>
+            <a class="btn btn-secondary" href="/Medicamento/Listar">
+                <i class="bi bi-arrow-left"></i>
+                Voltar para a lista de medicamentos
+            </a>
+        </div>
+    </form>
 
-<p>
-    <a href="/Medicamento/Listar">Voltar para a lista de medicamentos</a>
-</p>
+</div>

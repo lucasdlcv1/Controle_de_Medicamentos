@@ -6,16 +6,16 @@
     ViewBag.Title = "Excluir Medicamento";
 }
 
-<hr />
 
-<form action="/Medicamento/Excluir/@Model.Id" method="post">
+<div class="row"></div>
+<form asp-action="Excluir" asp-route-id="@Model.Id" method="post">
+    <p>
+        Tem certeza que deseja excluir o registro <strong>@Model.Nome</strong>?
+    </p>
 
-    <p>Tem certeza que deseja excluir o fornecedor <strong>@Model.Nome</strong>?</p>
-
-
-    <button type="submit">Confirmar</button>
+    <div class="d-flex gap-2 mt-4">
+        <button class="btn btn-danger" type="submit">Confirmar Exclusão</button>
+        <a class="btn btn-secondary" href="/Medicamento/Listar">Voltar para a lista de medicamentos</a>
+    </div>
 </form>
-
-<p>
-    <a href="/Medicamento/Listar">Voltar para a lista de medicamentos</a>
-</p>
+</div>

@@ -30,8 +30,20 @@ public class Medicamento : EntidadeBase
             foreach (RequisicaoEntrada req in Requisicoes)
                 total += req.Quantidade;
 
+            // Para cada requisição de saída devemos subtrair a quantidade
+            // prescrita deste medicamento específico (cada requisição pode conter
+            // vários medicamentos prescritos).
             foreach (RequisicaoSaida req in RequisicoesSaida)
-                total -= req.Quantidade;
+            {
+                foreach (MedicamentoPrescrito mp in req.MedicamentosPrescritos)
+                {
+                    if (mp.Medicamento.Id == this.Id)
+                    {
+                        total -= mp.Quantidade;
+                        break;
+                    }
+                }
+            }
 
             return total;
         }
@@ -42,7 +54,7 @@ public class Medicamento : EntidadeBase
         Requisicoes.Add(requisicao);
     }
 
-    public void RegistrarRequisicao(RequisicaoSaida requisicao)
+    public void RegistrarRequisicaoSaida(RequisicaoSaida requisicao)
     {
         RequisicoesSaida.Add(requisicao);
     }

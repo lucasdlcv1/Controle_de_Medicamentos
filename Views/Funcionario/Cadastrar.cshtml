@@ -7,30 +7,34 @@
     ViewBag.Title = "Cadastrar Funcionario";
 }
 
-<form asp-action="Cadastrar" method="post">
-    <div>
-        <label asp-for="Nome"></label>
-        <br />
-        <input asp-for="Nome" />
-    </div>
+<div class="row justify-content-start">
+    <form class="col-lg-6" asp-action="Cadastrar" method="post">
+        <div>
+            <label class="form-label" for="Nome">Nome</label>
+            <input type="text" class="form-control" id="Nome" name="Nome" />
+        </div>
 
-    <div>
-        <label asp-for="Telefone"></label>
-        <br />
-        <input asp-for="Telefone" />
-    </div>
+        <div class="mt-4">
+            <label class="form-label" for="Telefone">Telefone</label>
+            <input type="text" class="form-control" id="Telefone" name="Telefone" />
+        </div>
 
-    <div>
-        <label asp-for="Cpf">CPF</label>
-        <br />
-        <input asp-for="Cpf" />
-    </div>
+        <div class="mt-4">
+            <label class="form-label" for="Cpf">CPF</label>
+            <input type="text" class="form-control" id="Cpf" name="Cpf" />
+        </div>
 
 
+        <div class="d-flex gap-2 mt-4">
+            <button class="btn btn-primary" type="submit">
+                <i class="bi bi-check-circle"></i>
+                Confirmar Cadastro
+            </button>
+            <a class="btn btn-secondary" href="/Funcionario/Listar">
+                <i class="bi bi-arrow-left"></i>
+                Voltar para a lista de funcionarios
+            </a>
+        </div>
 
-    <button type="submit">Cadastrar</button>
-</form>
-
-<p>
-    <a asp-action="Listar">Voltar para a lista de funcionarios</a>
-</p>
+    </form>
+</div>

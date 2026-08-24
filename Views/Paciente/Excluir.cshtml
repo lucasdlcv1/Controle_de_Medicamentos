@@ -1,22 +1,21 @@
-@model ExcluirFuncionarioViewModel
-
+@model ExcluirPacienteViewModel;
 
 @{
     Layout = "_Layout";
 
-    ViewBag.Title = "Excluir Funcionário";
+    ViewBag.Title = "Excluir Paciente";
 }
 
 
 <div class="row"></div>
 <form asp-action="Excluir" asp-route-id="@Model.Id" method="post">
     <p>
-        Tem certeza que deseja excluir o funcionário <strong>@Model.Nome</strong>?
+        Tem certeza que deseja excluir o registro <strong>@Model.Nome</strong>?
     </p>
 
     <div class="d-flex gap-2 mt-4">
         <button class="btn btn-danger" type="submit">Confirmar Exclusão</button>
-        <a class="btn btn-secondary" href="/Funcionario/Listar">Voltar para a lista de funcionarios</a>
+        <a class="btn btn-secondary" href="/Paciente/Listar">Voltar para a lista de pacientes</a>
     </div>
 </form>
 </div>

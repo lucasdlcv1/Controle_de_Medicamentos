@@ -8,17 +8,26 @@ namespace ControleDeMedicamentos.WebApp.ModuloRequisicoes;
 public class RequisicaoSaida : RequisicaoBase
 {
     public Paciente Paciente { get; set; } = null!;
-
+    public List<MedicamentoPrescrito> MedicamentosPrescritos { get; set; } = [];
     public RequisicaoSaida() { }
-
-    public RequisicaoSaida(Medicamento medicamento, int quantidade, Funcionario funcionario, Paciente paciente) : this()
+    public RequisicaoSaida(Paciente paciente, List<MedicamentoPrescrito> medicamentosPrescritos) : this()
     {
-        Medicamento = medicamento;
-        Quantidade = quantidade;
-        Funcionario = funcionario;
         Paciente = paciente;
+        MedicamentosPrescritos = medicamentosPrescritos;
 
-        medicamento.RegistrarRequisicao(this);
+        foreach (MedicamentoPrescrito mp in MedicamentosPrescritos)
+            mp.Medicamento.RegistrarRequisicaoSaida(this);
+    }
+
+    public int ObterQuantidade(Medicamento medicamento)
+    {
+        foreach (MedicamentoPrescrito mp in MedicamentosPrescritos)
+        {
+            if (mp.Medicamento.Id == medicamento.Id)
+                return mp.Quantidade;
+        }
+
+        return 0;
     }
 
     public override List<string> Validar()
@@ -30,8 +39,13 @@ public class RequisicaoSaida : RequisicaoBase
         if (Paciente == null)
             erros.Add("O campo \"Paciente\" deve ser preenchido.");
 
-        if (Quantidade > Medicamento.QuantidadeEmEstoque)
-            erros.Add("A quantidade requisitada não pode ser maior que a quantidade em estoque.");
+        // Verifica, para cada medicamento prescrito, se a quantidade requisitada
+        // não é maior que a quantidade em estoque daquele medicamento.
+        foreach (MedicamentoPrescrito mp in MedicamentosPrescritos)
+        {
+            if (mp.Quantidade > mp.Medicamento.QuantidadeEmEstoque)
+                erros.Add($"A quantidade requisitada para o medicamento \"{mp.Medicamento.Nome}\" não pode ser maior que a quantidade em estoque.");
+        }
 
         return erros;
     }

@@ -54,18 +54,38 @@ public class TelaRequisicaoSaida : TelaRequisicaoBase<RequisicaoSaida>, ITelaOpc
 
     protected override RequisicaoSaida ObterDadosCadastrais()
     {
-        Medicamento medicamento = SelecionarMedicamento();
-        int quantidade = SelecionarQuantidade();
-
         VisualizarPacientes();
 
-        Console.Write("Digite o ID do Paciente usuario do medicamento: ");
+        Console.WriteLine("---------------------------------");
+
+        Console.Write("Digite o ID do paciente: ");
         int idPaciente = Convert.ToInt32(Console.ReadLine());
 
         Paciente paciente = repositorioPaciente.SelecionarPorId(idPaciente)!;
-        Funcionario funcionario = SelecionarFuncionario();
 
-        return new RequisicaoSaida(medicamento, quantidade, funcionario, paciente);
+        List<MedicamentoPrescrito> medicamentosPrescritos = [];
+
+        while (true)
+        {
+            VisualizarMedicamentos();
+
+            Console.WriteLine("---------------------------------");
+
+            Console.Write("Digite o ID do medicamento (0 para finalizar): ");
+            int idMedicamento = Convert.ToInt32(Console.ReadLine());
+
+            if (idMedicamento == 0)
+                break;
+
+            Medicamento medicamento = repositorioMedicamento.SelecionarPorId(idMedicamento)!;
+
+            Console.Write("Digite a quantidade: ");
+            int quantidade = Convert.ToInt32(Console.ReadLine());
+
+            medicamentosPrescritos.Add(new MedicamentoPrescrito(medicamento, quantidade));
+        }
+
+        return new RequisicaoSaida(paciente, medicamentosPrescritos);
     }
 
     private void VisualizarPacientes()

@@ -8,32 +8,54 @@
 
 
 <p>
-    <a href="/Funcionario/Cadastrar">Cadastrar Funcionarios</a>
+    <a class="btn btn-primary" href="/Funcionario/Cadastrar">
+        <i class="bi bi-plus-circle"></i>
+        Cadastrar Funcionario
+    </a>
 </p>
 
-<table>
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Nome</th>
-            <th>Telefone</th>
-            <th>Ações</th>
-        </tr>
-    </thead>
+@if (Model.Count == 0)
+{
+    <div class="alert alert-info mt-4" role="alert">
+        Nenhum fornecedor cadastrado.
+    </div>
+}
 
-    <tbody>
-        @foreach (ListarFuncionarioViewModel f in Model)
+else
+{
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+
+        @foreach (ListarFuncionarioViewModel funcionario in Model)
         {
-            <tr>
-                <td>@f.Id</td>
-                <td>@f.Nome</td>
-                <td>@f.Telefone</td>
-                <td>
-                    <a href="Editar/@f.Id">Editar</a>
-                    <span> | </span>
-                    <a href="Excluir/@f.Id">Excluir</a>
-                </td>
-            </tr>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5>@funcionario.Nome</h5>
+                            <span class="badge text-bg-secondary">@funcionario.Id</span>
+                        </div>
+
+                        <dl class="row mb-2">
+                            <dt class="col-sm-3">Telefone</dt>
+                            <dd class="col-sm-9">@funcionario.Telefone</dd>
+                        </dl>
+
+                        <div class="d-flex gap-2 justify-content-end mt-auto">
+                            <a class="btn btn-sm btn-outline-primary" href="/Funcionario/Editar/@funcionario.Id">
+                                <i class="bi bi-pencil"></i>
+                                Editar
+                            </a>
+                            <span> | </span>
+                            <a class="btn btn-sm btn-outline-danger" href="/Funcionario/Excluir/@funcionario.Id">
+                                <i class="bi bi-trash"></i>
+                                Excluir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         }
-    </tbody>
-</table>
+    </div>
+}
