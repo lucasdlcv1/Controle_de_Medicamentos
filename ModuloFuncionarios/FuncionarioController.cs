@@ -44,6 +44,9 @@ namespace ControleDeMedicamentos.WebApp.ModuloFuncionarios
 
         public ActionResult Cadastrar(CadastrarFuncionarioViewModel cadastrarVm)
         {
+            if (!ModelState.IsValid)
+                return View(cadastrarVm);
+
             Funcionario funcionario = new Funcionario(
             cadastrarVm.Nome,
             cadastrarVm.Telefone,
@@ -77,6 +80,9 @@ namespace ControleDeMedicamentos.WebApp.ModuloFuncionarios
         [HttpPost]
         public ActionResult Editar(EditarFuncionarioViewModel editarVm)
         {
+            if (!ModelState.IsValid)
+                return View(editarVm);
+
             Funcionario funcionarioAtualizado = new Funcionario(
                 editarVm.Nome,
                 editarVm.Telefone,

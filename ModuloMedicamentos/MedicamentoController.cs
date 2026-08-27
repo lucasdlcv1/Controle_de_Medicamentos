@@ -60,6 +60,12 @@ public sealed class MedicamentoController : Controller
     [HttpPost]
     public ActionResult Cadastrar(CadastrarMedicamentoViewModel viewModel)
     {
+        if (!ModelState.IsValid)
+        {
+            viewModel = viewModel with { Fornecedores = ObterFornecedores() };
+            return View(viewModel);
+        }
+
         Fornecedor? fornecedor = repositorioFornecedor.SelecionarPorId(viewModel.FornecedorId);
 
         if (fornecedor == null)
@@ -95,6 +101,12 @@ public sealed class MedicamentoController : Controller
     [HttpPost]
     public ActionResult Editar(EditarMedicamentoViewModel viewModel)
     {
+        if (!ModelState.IsValid)
+        {
+            viewModel = viewModel with { Fornecedores = ObterFornecedores() };
+            return View(viewModel);
+        }
+
         Fornecedor? fornecedor = repositorioFornecedor.SelecionarPorId(viewModel.FornecedorId);
 
         if (fornecedor == null)

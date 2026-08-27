@@ -66,13 +66,30 @@ public class RequisicaoSaidaController : Controller
     [HttpPost]
     public ActionResult Cadastrar(CadastrarRequisicaoSaidaViewModel viewModel)
     {
+        List<MedicamentoPrescritoRequisicaoSaidaViewModel> medicamentosModel =
+            viewModel.MedicamentosPrescritos ?? [];
+
+        for (int indice = 0; indice < medicamentosModel.Count; indice++)
+        {
+            if (medicamentosModel[indice].Selecionado && medicamentosModel[indice].Quantidade <= 0)
+                ModelState.AddModelError($"MedicamentosPrescritos[{indice}].Quantidade", "A quantidade deve ser maior que zero.");
+        }
+
+        if (!ModelState.IsValid)
+        {
+            viewModel = viewModel with
+            {
+                Pacientes = ObterPacientes(),
+                MedicamentosPrescritos = ObterMedicamentos(medicamentosModel)
+            };
+
+            return View(viewModel);
+        }
+
         Paciente? paciente = repositorioPaciente.SelecionarPorId(viewModel.PacienteId);
 
         if (paciente == null)
             return NotFound();
-
-        List<MedicamentoPrescritoRequisicaoSaidaViewModel> medicamentosModel =
-            viewModel.MedicamentosPrescritos ?? [];
 
         List<MedicamentoPrescrito> medicamentosPrescritos = [];
 

@@ -50,6 +50,9 @@ public class PacienteController : Controller
     [HttpPost]
     public ActionResult Cadastrar(CadastrarPacienteViewModel viewModel)
     {
+        if (!ModelState.IsValid)
+            return View(viewModel);
+
         Paciente paciente = new Paciente(
             viewModel.Nome,
             viewModel.Telefone,
@@ -84,6 +87,9 @@ public class PacienteController : Controller
     [HttpPost]
     public ActionResult Editar(EditarPacienteViewModel viewModel)
     {
+        if (!ModelState.IsValid)
+            return View(viewModel);
+
         Paciente pacienteAtualizado = new Paciente(
             viewModel.Nome,
             viewModel.Telefone,

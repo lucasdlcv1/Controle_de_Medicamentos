@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace ControleDeMedicamentos.WebApp.ModuloRequisicoes;
 
 public record MedicamentoRequisicaoEntradaViewModel(
@@ -19,8 +21,11 @@ public record ListarRequisicaoEntradaViewModel(
 );
 
 public record CadastrarRequisicaoEntradaViewModel(
+    [Range(1, int.MaxValue, ErrorMessage = "O medicamento deve ser selecionado")]
     int MedicamentoId,
+    [Range(1, int.MaxValue, ErrorMessage = "O funcionário deve ser selecionado")]
     int FuncionarioId,
+    [Range(1, int.MaxValue, ErrorMessage = "A quantidade deve ser maior que zero")]
     int Quantidade
 )
 {

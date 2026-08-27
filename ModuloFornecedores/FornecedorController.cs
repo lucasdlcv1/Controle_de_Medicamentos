@@ -29,16 +29,13 @@ public sealed class FornecedorController : Controller
     [HttpPost]
     public ActionResult Cadastrar(CadastrarFornecedorViewModel cadastrarVmm)
     {
-        Fornecedor fornecedor = new Fornecedor(cadastrarVmm.Nome, cadastrarVmm.Telefone, cadastrarVmm.Cnpj);
-
-        List<string> erros = fornecedor.Validar();
-
-        if (erros.Count > 0)
-        {
-            foreach (string erro in erros)
-                ModelState.AddModelError("", erro);
+        if (!ModelState.IsValid)
             return View(cadastrarVmm);
-        }
+
+        Fornecedor fornecedor = new Fornecedor(
+            cadastrarVmm.Nome,
+            cadastrarVmm.Telefone,
+            cadastrarVmm.Cnpj);
 
         repositorio.Cadastrar(fornecedor);
 
@@ -53,18 +50,24 @@ public sealed class FornecedorController : Controller
         if (fornecedor == null)
             return NotFound();
 
-        return View(fornecedor);
+        EditarFornecedorViewModel viewModel = new(
+            fornecedor.Id,
+            fornecedor.Nome,
+            fornecedor.Telefone,
+            fornecedor.Cnpj);
+
+        return View(viewModel);
     }
 
     [HttpPost]
-    public ActionResult Editar(int id, string nome, string telefone, string cnpj)
+    public ActionResult Editar(EditarFornecedorViewModel viewModel)
     {
+        if (!ModelState.IsValid)
+            return View(viewModel);
 
-        Fornecedor fornecedorEditado = new Fornecedor(nome, telefone, cnpj);
+        Fornecedor fornecedorEditado = new(viewModel.Nome, viewModel.Telefone, viewModel.Cnpj);
 
-        repositorio.Editar(id, fornecedorEditado);
-
-        bool sucesso = repositorio.Editar(id, fornecedorEditado);
+        bool sucesso = repositorio.Editar(viewModel.Id, fornecedorEditado);
 
         if (!sucesso)
             return NotFound();

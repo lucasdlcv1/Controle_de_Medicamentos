@@ -1,4 +1,4 @@
-@model List<Fornecedor>
+@model CadastrarFornecedorViewModel
 
 @{
     Layout = "_Layout";
@@ -7,19 +7,24 @@
 }
 <div class="row justify-content-start">
     <form class="col-lg-6" action="/Fornecedor/Cadastrar" method="post">
-        <div>
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+
+        <div class="mt-4">
             <label class="form-label" for="Nome">Nome</label>
             <input type="text" class="form-control" id="Nome" name="Nome" />
+            <span class="text-danger" asp-validation-for="Nome"></span>
         </div>
 
         <div class="mt-4">
             <label class="form-label" for="Telefone">Telefone</label>
             <input type="text" class="form-control" id="Telefone" name="Telefone" />
+            <span class="text-danger" asp-validation-for="Telefone"></span>
         </div>
 
         <div class="mt-4">
             <label class="form-label" for="Cnpj">CNPJ</label>
             <input type="text" class="form-control" id="Cnpj" name="Cnpj" />
+            <span class="text-danger" asp-validation-for="Cnpj"></span>
         </div>
 
 

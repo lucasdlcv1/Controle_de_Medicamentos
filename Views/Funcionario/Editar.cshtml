@@ -10,19 +10,24 @@
 
 <div class="row justify-content-start">
     <form class="col-lg-6" asp-action="Editar" asp-route-id="@Model.Id" method="post">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <input asp-for="Id" type="hidden" />
         <div>
             <label class="form-label" for="Nome">Nome</label>
             <input type="text" class="form-control" id="Nome" name="Nome" value="@Model.Nome" />
+            <span class="text-danger" asp-validation-for="Nome"></span>
         </div>
 
         <div class="mt-4">
             <label class="form-label" for="Telefone">Telefone</label>
             <input type="text" class="form-control" id="Telefone" name="Telefone" value="@Model.Telefone" />
+            <span class="text-danger" asp-validation-for="Telefone"></span>
         </div>
 
         <div class="mt-4">
             <label class="form-label" for="Cpf">CPF</label>
             <input type="text" class="form-control" id="Cpf" name="Cpf" value="@Model.Cpf" />
+            <span class="text-danger" asp-validation-for="Cpf"></span>
         </div>
 
 

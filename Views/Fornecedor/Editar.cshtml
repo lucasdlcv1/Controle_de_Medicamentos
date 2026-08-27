@@ -1,4 +1,4 @@
-@model Fornecedor;
+@model EditarFornecedorViewModel
 
 @{
     Layout = "_Layout";
@@ -8,19 +8,24 @@
 
 <div class="row justify-content-start">
     <form class="col-lg-6" action="/Fornecedor/Editar/@Model.Id" method="post">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <input asp-for="Id" type="hidden" />
         <div>
             <label class="form-label" for="Nome">Nome</label>
-            <input type="text" class="form-control" id="Nome" name="Nome" value="@Model.Nome" />
+            <input type="text" class="form-control" asp-for="Nome" />
+            <span class="text-danger" asp-validation-for="Nome"></span>
         </div>
 
         <div class="mt-4">
             <label class="form-label" for="Telefone">Telefone</label>
-            <input type="text" class="form-control" id="Telefone" name="Telefone" value="@Model.Telefone" />
+            <input type="text" class="form-control" asp-for="Telefone" />
+            <span class="text-danger" asp-validation-for="Telefone"></span>
         </div>
 
         <div class="mt-4">
             <label class="form-label" for="Cnpj">CNPJ</label>
-            <input type="text" class="form-control" id="Cnpj" name="Cnpj" value="@Model.Cnpj" />
+            <input type="text" class="form-control" asp-for="Cnpj" />
+            <span class="text-danger" asp-validation-for="Cnpj"></span>
         </div>
 
 

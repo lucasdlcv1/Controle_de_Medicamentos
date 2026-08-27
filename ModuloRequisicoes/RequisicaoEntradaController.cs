@@ -55,6 +55,17 @@ public class RequisicaoEntradaController : Controller
     [HttpPost]
     public ActionResult Cadastrar(CadastrarRequisicaoEntradaViewModel viewModel)
     {
+        if (!ModelState.IsValid)
+        {
+            viewModel = viewModel with
+            {
+                Medicamentos = ObterMedicamentos(),
+                Funcionarios = ObterFuncionarios()
+            };
+
+            return View(viewModel);
+        }
+
         Medicamento? medicamento = repositorioMedicamento.SelecionarPorId(viewModel.MedicamentoId);
 
         if (medicamento == null)

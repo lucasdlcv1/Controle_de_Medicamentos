@@ -8,15 +8,18 @@
 
 <div class="row justify-content-start">
     <form class="col-lg-6" asp-action="Cadastrar" method="post">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
 
         <div>
             <label class="form-label" asp-for="Nome">Nome</label>
             <input class="form-control" type="text" asp-for="Nome" name="Nome" />
+            <span class="text-danger" asp-validation-for="Nome"></span>
         </div>
 
         <div class="mt-4">
             <label class="form-label" asp-for="Descricao">Descricao</label>
             <textarea class="form-control" asp-for="Descricao"></textarea>
+            <span class="text-danger" asp-validation-for="Descricao"></span>
         </div>
 
         <div class="mt-4">
@@ -29,6 +32,7 @@
 
                 }
             </select>
+            <span class="text-danger" asp-validation-for="FornecedorId"></span>
 
 
         </div>
