@@ -27,9 +27,18 @@ public sealed class FornecedorController : Controller
     }
 
     [HttpPost]
-    public ActionResult Cadastrar(string nome, string telefone, string cnpj)
+    public ActionResult Cadastrar(CadastrarFornecedorViewModel cadastrarVmm)
     {
-        Fornecedor fornecedor = new Fornecedor(nome, telefone, cnpj);
+        Fornecedor fornecedor = new Fornecedor(cadastrarVmm.Nome, cadastrarVmm.Telefone, cadastrarVmm.Cnpj);
+
+        List<string> erros = fornecedor.Validar();
+
+        if (erros.Count > 0)
+        {
+            foreach (string erro in erros)
+                ModelState.AddModelError("", erro);
+            return View(cadastrarVmm);
+        }
 
         repositorio.Cadastrar(fornecedor);
 
